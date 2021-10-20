@@ -1,0 +1,34 @@
+﻿@page
+@model AutoEscolaDirecao.Pages.Treinamentos.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Excluir</h1>
+
+<h3>Tem certeza que deseja excluir?</h3>
+<div>
+    <h4>Treinamentos</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treinamentos.Curso)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treinamentos.Curso)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treinamentos.Alunos)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treinamentos.Alunos)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Treinamentos.ID" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Retornar</a>
+    </form>
+</div>

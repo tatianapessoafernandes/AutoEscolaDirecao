@@ -1,0 +1,39 @@
+﻿@page
+@model AutoEscolaDirecao.Pages.Treinamentos.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Treinamentos</h1>
+
+<h4>Novo Treinamento</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Treinamentos.Curso" class="control-label"></label>
+                <input asp-for="Treinamentos.Curso" class="form-control" />
+                <span asp-validation-for="Treinamentos.Curso" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Treinamentos.Alunos" class="control-label"></label>
+                <input asp-for="Treinamentos.Alunos" class="form-control" />
+                <span asp-validation-for="Treinamentos.Alunos" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Retornar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

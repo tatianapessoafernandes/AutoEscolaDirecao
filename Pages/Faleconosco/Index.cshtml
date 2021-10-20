@@ -1,0 +1,48 @@
+﻿@page
+@model AutoEscolaDirecao.Pages.Faleconosco.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Fale Conosco</h1>
+
+<p>
+    <a asp-page="Create">Novo Formulário</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Faleconosco[0].Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Faleconosco[0].Contato)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Faleconosco[0].Duvidas)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Faleconosco) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Contato)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Duvidas)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Detalhes</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

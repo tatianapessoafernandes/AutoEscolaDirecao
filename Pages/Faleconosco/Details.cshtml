@@ -1,0 +1,37 @@
+﻿@page
+@model AutoEscolaDirecao.Pages.Faleconosco.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Faleconosco</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Faleconosco.Nome)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Faleconosco.Nome)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Faleconosco.Contato)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Faleconosco.Contato)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Faleconosco.Duvidas)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Faleconosco.Duvidas)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Faleconosco.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

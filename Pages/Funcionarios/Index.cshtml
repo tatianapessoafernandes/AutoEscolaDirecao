@@ -1,0 +1,60 @@
+﻿@page
+@model AutoEscolaDirecao.Pages.Funcionarios.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Funcionários</h1>
+
+<p>
+    <a asp-page="Create">Novo Funcionário</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Funcionarios[0].Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Funcionarios[0].Documento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Funcionarios[0].Email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Funcionarios[0].Cargo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Funcionarios[0].DataAdmissao)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Funcionarios) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Documento)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cargo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DataAdmissao)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Editar</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Detalhes</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Excluir</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,68 @@
+﻿@page
+@model AutoEscolaDirecao.Pages.Funcionarios.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Funcionários</h1>
+
+<h4>Novo Funcionário</h4>
+<hr />
+<form method="post">
+
+    <div class="row">
+        <div class="col-md-8">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Funcionarios.Nome" class="control-label"></label>
+                <input asp-for="Funcionarios.Nome" class="form-control" />
+                <span asp-validation-for="Funcionarios.Nome" class="text-danger"></span>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="form-group">
+                <label asp-for="Funcionarios.Documento" class="control-label"></label>
+                <input asp-for="Funcionarios.Documento" class="form-control" />
+                <span asp-validation-for="Funcionarios.Documento" class="text-danger"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <div class="form-group">
+                <label asp-for="Funcionarios.Email" class="control-label"></label>
+                <input asp-for="Funcionarios.Email" class="form-control" />
+                <span asp-validation-for="Funcionarios.Email" class="text-danger"></span>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Funcionarios.Cargo" class="control-label"></label>
+                    <input asp-for="Funcionarios.Cargo" class="form-control" />
+                    <span asp-validation-for="Funcionarios.Cargo" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label asp-for="Funcionarios.DataAdmissao" class="control-label"></label>
+                    <input asp-for="Funcionarios.DataAdmissao" class="form-control" />
+                    <span asp-validation-for="Funcionarios.DataAdmissao" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary" />
+    </div>
+</form>
+    
+
+<div>
+    <a asp-page="Index">Retornar</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

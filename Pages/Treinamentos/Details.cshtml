@@ -1,0 +1,31 @@
+﻿@page
+@model AutoEscolaDirecao.Pages.Treinamentos.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Detalhes</h1>
+
+<div>
+    <h4>Treinamentos</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treinamentos.Curso)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treinamentos.Curso)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Treinamentos.Alunos)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Treinamentos.Alunos)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Treinamentos.ID">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
